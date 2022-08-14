@@ -1,0 +1,167 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Arimo', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+.app-content{
+    width: 500px;
+}
+.menu{
+    background-color: #090;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+    .menu, .app-content{
+        width: 350px;
+    }
+}
+.title{
+    margin: 0 0 10px;
+    color: #090;
+    font-size: 18px
+}
+.des{
+    color: #0c0;
+    font-size: 14px;
+}
+.box-cont{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+.option{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.correct-opt{
+    background-color: #090;
+    color: #fff;
+}
+.wrong-opt{
+    background-color: #f00;
+    color: #fff;
+}
+.rate{
+    display: block;
+    font-size: 14px;
+    margin-top: 15px;
+}
+.rate.correct {
+    color: #090;
+}
+.rate.not-correct {
+    color: #900;
+}
+.rate i{
+    margin-right: 10px;
+}
+.buttons{
+    flex-direction: row-reverse;
+}
+.buttons button{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: #090;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-top: 30px;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.26);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.pop{
+    width: 300px;
+    height: 170px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 8px #00000038;
+}
+.pop h2{
+    color: #090;
+    margin-bottom: 10px;
+}
+.pop > span{
+    display: block;
+    color: #0c0;
+}
+.pop span span{
+    color: #090;
+    font-weight: bold;
+}
+.pop button{
+    display: block;
+    outline: none;
+    border: none;
+    background-color: #090;
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 40px auto 0;
+}
+.last{
+    text-align: center;
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 2px 8px #00000038;
+    width: 300px;
+    position: relative;
+    z-index: 2;
+}
+.last h2{
+    color: #090;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+.last p{
+    color: #0c0;
+    font-size: 16px;
+}
+.last button{
+    margin-top: 60px;
+    background-color: #090;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+}
