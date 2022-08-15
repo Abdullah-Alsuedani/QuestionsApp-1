@@ -6,6 +6,7 @@ let boxCont;
 let options;
 let rate;
 let icon;
+let btnsCont;
 let point;
 let pointNum = 0;
 let level;
@@ -84,27 +85,29 @@ function choosse(rightAns){
         })
         if(e.target.textContent === rightAns){
             e.target.classList.add("correct-opt")
-            rate.innerHTML = "";
-            rate.classList.remove("not-correct")
-            rate.classList.add("correct");
-            rate.appendChild(icon);
-            icon.classList.remove("fa-circle-xmark")
-            icon.classList.add("fa-circle-check")
-            rate.appendChild(document.createTextNode("Correct Answare"));
-            btnsCont = document.createElement("div")
-            btnsCont.classList.add("buttons")
-            nextBtn = document.createElement("button");
-            nextBtn.appendChild(document.createTextNode("Next"))
-            btnsCont.appendChild(nextBtn)
-            div.appendChild(btnsCont)
-            pointNum += 10;
-            point.innerHTML = `Your Point Is: ${pointNum}`
-            nextBtn.addEventListener("click", function(){
-                menuCont.innerHTML = ""
-                div.innerHTML = "";
-                thisLevel++
-                generator.next();
-            })
+            if(!div.contains(btnsCont)){
+                rate.innerHTML = "";
+                rate.classList.remove("not-correct")
+                rate.classList.add("correct");
+                rate.appendChild(icon);
+                icon.classList.remove("fa-circle-xmark")
+                icon.classList.add("fa-circle-check")
+                rate.appendChild(document.createTextNode("Correct Answare"));
+                btnsCont = document.createElement("div")
+                btnsCont.classList.add("buttons")
+                nextBtn = document.createElement("button");
+                nextBtn.appendChild(document.createTextNode("Next"))
+                btnsCont.appendChild(nextBtn)
+                div.appendChild(btnsCont)
+                pointNum += 10;
+                point.innerHTML = `Your Point Is: ${pointNum}`
+                nextBtn.addEventListener("click", function(){
+                    menuCont.innerHTML = ""
+                    div.innerHTML = "";
+                    thisLevel++
+                    generator.next();
+                })
+            }
         }else{
             e.target.classList.add("wrong-opt")
             rate.innerHTML = "";
